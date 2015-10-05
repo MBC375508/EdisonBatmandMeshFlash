@@ -4,6 +4,7 @@ clear
 echo "Setting up Edison Batmand mesh"
 
 echo ".... batmand ...."
+cd /
 ./home/root/batmand/batmand wlan0
 
 echo ".... mesh ...."
