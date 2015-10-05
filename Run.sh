@@ -21,7 +21,7 @@ wpa_cli -iwlan0 set_network 0 scan_ssid 1
 wpa_cli -iwlan0 select_network 0
 wpa_cli -iwlan0 enable_network 0
 wpa_cli -iwlan0 status
-udhcpd -i wlan0
+udhcpd wlan0
 
 clear
 echo ".... Result ...."
