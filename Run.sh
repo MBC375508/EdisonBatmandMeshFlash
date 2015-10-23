@@ -14,7 +14,7 @@ cd /
 
 echo ".... mesh ...."
 
-sleep 0.5
+sleep 1
 
 wpa_cli -iwlan0 add_network
 wpa_cli -iwlan0 set_network 0 frequency 2412
@@ -28,14 +28,10 @@ wpa_cli -iwlan0 enable_network 0
 wpa_cli -iwlan0 status
 udhcpd wlan0
 
-sleep 1
+sleep 5
 
 clear
 echo ".... Result ...."
 wpa_cli -iwlan0 status
-
-sleep 0.5
-
 ifconfig wlan0
-
 echo "done"
