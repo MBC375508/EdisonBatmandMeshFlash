@@ -3,6 +3,11 @@
 clear
 echo "Setting up Edison Batmand mesh"
 
+wpa_cli -iwlan0 disconnect
+wpa_cli -iwlan0 remove_network all
+
+sleep 1
+
 echo ".... batmand ...."
 cd /
 ./home/root/batmand/batmand -o 500 -s 10.42.0.1 wlan0
@@ -11,8 +16,6 @@ echo ".... mesh ...."
 
 sleep 0.5
 
-wpa_cli -iwlan0 disconnect
-wpa_cli -iwlan0 remove_network all
 wpa_cli -iwlan0 add_network
 wpa_cli -iwlan0 set_network 0 frequency 2412
 wpa_cli -iwlan0 set_network 0 mode 1
@@ -25,7 +28,7 @@ wpa_cli -iwlan0 enable_network 0
 wpa_cli -iwlan0 status
 udhcpd wlan0
 
-sleep 0.5
+sleep 1
 
 clear
 echo ".... Result ...."
